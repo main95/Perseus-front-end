@@ -55,7 +55,6 @@ const DashboardLayout: React.FC = () => {
 
   const onNext = () => {
     const nextUrl = getNextUrl(step)
-    console.log(getNextUrl(step))
     dispatch(appActions.setPageStep(nextUrl))
     navigate(nextUrl)
   }

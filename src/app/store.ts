@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import appReducer from '../features/app/slice';
+import orderReducer from '../features/order/slice';
 
 export const store = configureStore({
   reducer: {
     app: appReducer,
+    order: orderReducer,
   },
 });
 

@@ -37,9 +37,10 @@ const Header: React.FC<Props> = ({ onOpenNav, onBack, onNext }) => {
       <StyledToolbar>
         <IconButton
           onClick={onOpenNav}
+          size='large'
           sx={{
             mr: 1,
-            color: 'text.primary',
+            color: 'white',
             display: { lg: 'none' },
           }}
         >

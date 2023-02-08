@@ -2,7 +2,7 @@ import { styled } from '@mui/material'
 import { useSelector } from 'react-redux'
 import { StyledCommonPageWrapper } from '../components/common/CommonComponents'
 import TableComponents from '../components/tables/TableComponent'
-import { selectCurrentTable } from '../features/app/selectors'
+import { selectCurrentOrderTable } from '../features/order/selectors'
 import { mockTables, tablesTemplateArea, tablesTemplateColumns, tablesTemplateRows } from '../_mocks/tables'
 
 const TableContainer = styled('div')(({ theme }) => ({
@@ -18,7 +18,7 @@ const TableContainer = styled('div')(({ theme }) => ({
 const XSeoPage: React.FC = () => {
   const tables = mockTables
 
-  const currentSelectedTable = useSelector(selectCurrentTable)
+  const currentSelectedTable = useSelector(selectCurrentOrderTable)
 
   return (
     <StyledCommonPageWrapper>

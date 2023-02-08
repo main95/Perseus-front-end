@@ -2,7 +2,7 @@ import { styled } from '@mui/material'
 import { Action, ThunkDispatch } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux'
 import { RootState } from '../../app/store'
-import appActions from '../../features/app/actions'
+import orderActions from '../../features/order/actions'
 
 const StyledTable = styled('div')<{ selected: boolean }>(({theme, selected}) => ({
   backgroundColor: selected ? theme.palette.success.main : theme.palette.info.main,
@@ -26,7 +26,7 @@ const TableComponents: React.FC<Props> = ({
   const dispatch: ThunkDispatch<RootState, unknown, Action<string>> = useDispatch()
 
   const handleClick = () => {
-    dispatch(appActions.setCurrentTable(tableName))
+    dispatch(orderActions.setOrderTable(tableName))
   }
 
   return (
