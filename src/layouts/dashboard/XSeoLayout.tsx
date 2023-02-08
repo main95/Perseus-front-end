@@ -3,7 +3,7 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import Nav from './nav'
 import Header from './header'
 import { styled } from '@mui/material'
-import { StyledCommonPageWrapper } from '../../components/common/CommonComponents'
+import { StyledCommonPageLayoutWrapper } from '../../components/common/CommonComponents'
 import { PageStep } from '../../types/model'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectPageStep } from '../../features/app/selectors'
@@ -70,9 +70,9 @@ const DashboardLayout: React.FC = () => {
 
       <Nav openNav={open} onCloseNav={() => setOpen(false)} />
 
-      <StyledCommonPageWrapper>
+      <StyledCommonPageLayoutWrapper>
         <Outlet />
-      </StyledCommonPageWrapper>
+      </StyledCommonPageLayoutWrapper>
     </StyledRoot>
   )
 }

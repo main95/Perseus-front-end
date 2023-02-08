@@ -5,13 +5,7 @@ import Iconify from '../../../components/iconify'
 import StandardButton from '../../../styleguide/StandardButton'
 import { useSelector } from 'react-redux'
 import { selectPageStep } from '../../../features/app/selectors'
-// import AccountPopover from './AccountPopover'
-// import LanguagePopover from './LanguagePopover'
-// import NotificationsPopover from './NotificationsPopover'
-
-// const NAV_WIDTH = 280
-const HEADER_MOBILE = 64
-// const HEADER_DESKTOP = 92
+import { HEADER_MOBILE } from '../../../styleguide/Size'
 
 // const StyledRoot = styled(AppBar)(({ theme }) => ({
 //   ...bgBlur({ color: theme.palette.background.default }) as any,
@@ -23,6 +17,7 @@ const HEADER_MOBILE = 64
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   minHeight: HEADER_MOBILE,
+  height: HEADER_MOBILE,
   paddingRight: theme.spacing(1),
   // padding: theme.spacing(0, 5),
 }))
@@ -38,7 +33,7 @@ const Header: React.FC<Props> = ({ onOpenNav, onBack, onNext }) => {
   const showBackButton = step !== 'tables'
 
   return (
-    <AppBar position='fixed'>
+    <AppBar position='absolute'>
       <StyledToolbar>
         <IconButton
           onClick={onOpenNav}
