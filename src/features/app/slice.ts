@@ -2,15 +2,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PageStep } from '../../types/model';
 
 export interface CounterState {
-  value: number;
-  status: 'idle' | 'loading' | 'failed';
   pageStep: PageStep
+  currentCategoryCode: string
 }
 
 const initialState: CounterState = {
-  value: 0,
-  status: 'idle',
   pageStep: 'tables',
+  currentCategoryCode: '',
 }
 
 export const slice = createSlice({
@@ -19,6 +17,9 @@ export const slice = createSlice({
   reducers: {
     _setPageStep: (state, { payload }: PayloadAction<{ pageStep: PageStep }>) => {
 			state.pageStep = payload.pageStep
+		},
+    _setCurrentCategoryCode: (state, { payload }: PayloadAction<{ code: string }>) => {
+			state.currentCategoryCode = payload.code
 		},
   },
 });

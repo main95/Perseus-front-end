@@ -7,9 +7,15 @@ const setPageStep = (step: PageStep): AppThunk => (dispatch) => {
 	return
 }
 
+const setCurrentCategoryRow = (code: string): AppThunk => (dispatch) => {
+	dispatch(slice.actions._setCurrentCategoryCode({ code: code }))
+	return
+}
+
 const appActions = {
 	...slice.actions,
 	setPageStep,
+	setCurrentCategoryRow,
 }
 
 export default appActions
